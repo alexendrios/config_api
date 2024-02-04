@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3'
 
 services:
   api-jwt-app:
@@ -7,4 +7,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
- 
+    networks:
+      - skynet 
+
+networks:
+  skynet:
+    driver: bridge
