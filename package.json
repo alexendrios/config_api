@@ -1,0 +1,60 @@
+{
+  "name": "api-jwt",
+  "version": "1.0.0",
+  "description": "api Rest da api-jwt",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/aplicacao.js",
+    "test": "cross-env NODE_ENV=test jest --coverage=true"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "reports",
+          "outputName": "report.xml"
+        }
+      ],
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "Unit Test Report"
+        }
+      ]
+    ]
+  },
+  "keywords": [
+    "api",
+    "node.js",
+    "hapi.dev"
+  ],
+  "author": "Alexandre Santos",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.40.3",
+    "@opentelemetry/exporter-prometheus": "^0.48.0",
+    "@opentelemetry/sdk-metrics": "^1.21.0",
+    "@opentelemetry/sdk-node": "^0.48.0",
+    "@opentelemetry/sdk-trace-node": "^1.21.0",
+    "date-fns": "^3.3.1",
+    "dotenv": "^16.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.3",
+    "prom-client": "^15.1.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@hapi/code": "^9.0.3",
+    "@hapi/lab": "^25.2.0",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "jest-junit": "^16.0.0",
+    "jest-mock-process": "^2.0.0",
+    "supertest": "^6.3.4"
+  }
+}
